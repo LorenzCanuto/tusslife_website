@@ -1,24 +1,129 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+/--front-end pages--/;
+import Home from "../views/frontend_views/Home.vue";
+import Store from "../views/frontend_views/Store.vue";
+import Content from "../views/frontend_views/Content.vue";
+import All from "../views/frontend_views/AllContent.vue";
+import Culture from "../views/frontend_views/Culture.vue";
+import Art from "../views/frontend_views/Art.vue";
+import Life from "../views/frontend_views/Life.vue";
+import Contact from "../views/frontend_views/Contact.vue";
+import About from "../views/frontend_views/About.vue";
+import Cart from "../views/frontend_views/Cart.vue";
+import Login from "../views/frontend_views/Login.vue";
+import Account from "../views/frontend_views/Account.vue";
+/--admin pages--/;
+import Admin from "../views/admin_views/Admin.vue";
+import Overview from "../views/admin_views/Overview.vue";
+import Products from "../views/admin_views/Products.vue";
+import Orders from "../views/admin_views/Orders.vue";
+import Contents from "../views/admin_views/Contents.vue";
+import Messages from "../views/admin_views/Messages.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
+    component: Home
+  },
+  {
+    path: "/home",
+    name: "home",
     component: Home
   },
   {
     path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
-  }
+    name: "about",
+    component:About
+  },
+  {
+    path: "/store",
+    name: "store",
+    component:Store
+  },
+  {
+    path: "/content",
+    name: "content",
+    component:Content,
+    children:[
+      {
+        path: "culture",
+        name: "culture",
+        component: Culture
+      },
+      {
+        path: "art",
+        name: "art",
+        component: Art
+      },
+      {
+        path: "life",
+        name: "life",
+        component: Life
+      },
+      {
+        path: "all",
+        name: "all",
+        component: All
+      }
+    ]
+  },
+  {
+    path: "/contact",
+    name: "contact",
+    component:Contact
+  },
+  {
+    path: "/cart",
+    name: "cart",
+    component:Cart
+  },
+  {
+    path: "/login",
+    name: "login",
+    component:Login
+  },
+  {
+    path: "/account",
+    name: "account",
+    component:Account
+  },
+  {
+    path: "/admin",
+    name: "admin",
+    component: Admin,
+    children:[
+      {
+        path: "overview",
+        name: "overview",
+        component: Overview
+      },
+      {
+        path: "products",
+        name: "products",
+        component: Products
+      },
+      {
+        path: "orders",
+        name: "orders",
+        component: Orders
+      },
+      {
+        path: "contents",
+        name: "contents",
+        component: Contents
+      },
+      {
+        path: "messages",
+        name: "messages",
+        component: Messages
+      }
+    
+    ]
+  },
 ];
 
 const router = new VueRouter({
