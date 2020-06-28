@@ -8,6 +8,7 @@ import 'bootstrap';
 import './assets/app.scss';
 
 Vue.component('Navbar', require('./components/Navbar.vue').default);
+Vue.component('Footer', require('./components/Footer.vue').default);
 
 Vue.config.productionTip = false;
 

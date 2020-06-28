@@ -2,6 +2,7 @@
   <div class="content">
     <Navbar></Navbar>
     <router-view/>
+    <Footer></Footer>
   </div>
 </template>
 

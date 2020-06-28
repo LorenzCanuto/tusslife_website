@@ -1,6 +1,8 @@
 <template>
   <div class="all-content">
-    <h1>This is all content page</h1>
+    <div class="main">
+      <h1>This is all content page</h1>
+    </div>
   </div>
 </template>
 
@@ -13,5 +15,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  .main{
+    margin-top: 90px;
+    min-height: 90vh;
+  }
+  @media(min-width: 800px) {
+    .main{
+      margin-top: 90px;
+      min-height: 74vh;
+    }
+  }
 
 </style>
