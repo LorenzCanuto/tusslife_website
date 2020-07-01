@@ -12,14 +12,16 @@ import Contact from "../views/frontend_views/Contact.vue";
 import About from "../views/frontend_views/About.vue";
 import Cart from "../views/frontend_views/Cart.vue";
 import Login from "../views/frontend_views/Login.vue";
+import Signup from "../views/frontend_views/Signup.vue";
 import Account from "../views/frontend_views/Account.vue";
 /--admin pages--/;
 import Admin from "../views/admin_views/Admin.vue";
+import AdminLogin from "../views/admin_views/AdminLogin.vue";
 import Overview from "../views/admin_views/Overview.vue";
 import Products from "../views/admin_views/Products.vue";
 import Orders from "../views/admin_views/Orders.vue";
 import Contents from "../views/admin_views/Contents.vue";
-import Messages from "../views/admin_views/Messages.vue";
+import Inbox from "../views/admin_views/Inbox.vue";
 
 Vue.use(VueRouter);
 
@@ -27,109 +29,118 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: Home
+    component: Home,
   },
   {
     path: "/home",
     name: "home",
-    component: Home
+    component: Home,
   },
   {
     path: "/about",
     name: "about",
-    component:About
+    component: About,
   },
   {
     path: "/store",
     name: "store",
-    component:Store
+    component: Store,
   },
   {
     path: "/content",
     name: "content",
-    component:Content,
-    children:[
+    component: Content,
+    children: [
       {
         path: "culture",
         name: "culture",
-        component: Culture
+        component: Culture,
       },
       {
         path: "art",
         name: "art",
-        component: Art
+        component: Art,
       },
       {
         path: "life",
         name: "life",
-        component: Life
+        component: Life,
       },
       {
         path: "all",
         name: "all",
-        component: All
-      }
-    ]
+        component: All,
+      },
+    ],
   },
   {
     path: "/contact",
     name: "contact",
-    component:Contact
+    component: Contact,
   },
   {
     path: "/cart",
     name: "cart",
-    component:Cart
+    component: Cart,
   },
   {
     path: "/login",
     name: "login",
-    component:Login
+    component: Login,
+  },
+  {
+    path: "/signup",
+    name: "signup",
+    component: Signup,
   },
   {
     path: "/account",
     name: "account",
-    component:Account
+    component: Account,
+  },
+  {
+    path: "/admin/login",
+    name: "adminlogin",
+    component: AdminLogin,
   },
   {
     path: "/admin",
     name: "admin",
     component: Admin,
-    children:[
+    children: [
       {
         path: "overview",
         name: "overview",
-        component: Overview
+        component: Overview,
       },
       {
         path: "products",
         name: "products",
-        component: Products
+        component: Products,
       },
       {
         path: "orders",
         name: "orders",
-        component: Orders
+        component: Orders,
       },
       {
         path: "contents",
         name: "contents",
-        component: Contents
+        component: Contents,
       },
       {
-        path: "messages",
-        name: "messages",
-        component: Messages
-      }
-    
-    ]
+        path: "inbox",
+        name: "inbox",
+        component: Inbox,
+      },
+    ],
   },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;

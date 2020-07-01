@@ -1,6 +1,5 @@
 <template>
   <div class="login">
-    <Navbar></Navbar>
     <div class="main">
       <div class="login-form">
         <h3>Log In</h3>
@@ -21,7 +20,6 @@
         <button @click="login">login</button>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
@@ -43,7 +41,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then((user) => {
           console.log(user.user.email.toString)
-          this.$router.replace('admin')
+          this.$router.replace('overview')
         })
         .catch(function(error) {
           // Handle Errors here.
@@ -52,8 +50,8 @@ export default {
           // ...
           console.log(errorCode+errorMessage);
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

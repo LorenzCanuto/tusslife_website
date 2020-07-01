@@ -1,14 +1,14 @@
 <template>
-  <div class="messages">
+  <div class="inbox">
       <div class="container">
-          <h3>Messages page</h3>
+          <h3>Inbox page</h3>
       </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Messages",
+  name: "Inbox",
   props: {
     msg: String
   }
